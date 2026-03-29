@@ -2,6 +2,7 @@ docker-devpi
 ============
 
 This repository contains a Dockerfile for [devpi pypi server](http://doc.devpi.net/latest/).
+Documentation available at https://devpi.net/docs/devpi/devpi/stable/%2Bd/index.html
 
 You can use this container to speed up the `pip install` parts of your docker
 builds. This is done by adding an optional cache of your requirement python

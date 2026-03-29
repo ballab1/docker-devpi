@@ -17,6 +17,8 @@ devpi-client         7.2.0
 devpi-common         4.0.4
 devpi-jenkins        3.0.1
 devpi-server         6.14.0
+devpi-postgresql     3.0.1
+#devpi-theme-16       2.1.0
 devpi-web            4.2.3
 docutils             0.21.2
 exceptiongroup       1.2.2

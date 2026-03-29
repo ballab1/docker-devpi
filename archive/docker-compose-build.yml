@@ -13,16 +13,16 @@ services:
         ARG_DEVPI_CLIENT_VERSION: ${DOCKER_DEVPI_CLIENT_VERSION}
         ARG_DEVPI_THEME_VERSION: ${DOCKER_DEVPI_THEME_VERSION}
         ARG_DEVPI_JENKINS_VERSION: ${DOCKER_DEVPI_JENKINS_VERSION}
-    image: s2.ubuntu.home:5000/docker.io/muccg/devpi:${GIT_BRANCH}
+    image: ${DOCKER_REGISTRY:-}docker.io/muccg/devpi:${GIT_BRANCH}
 
   prod:
     extends:
       file: docker-compose-build.yml
       service: dev
-    image: s2.ubuntu.home:5000/docker.io/muccg/devpi:${DOCKER_DEVPI_SERVER_VERSION}
+    image: ${DOCKER_REGISTRY:-}docker.io/muccg/devpi:${DOCKER_DEVPI_SERVER_VERSION}
 
   latest:
     extends:
       file: docker-compose-build.yml
       service: dev
-    image: s2.ubuntu.home:5000/docker.io/muccg/devpi:latest
+    image: ${DOCKER_REGISTRY:-}docker.io/muccg/devpi:latest

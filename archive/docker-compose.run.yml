@@ -2,7 +2,7 @@
 services:
 
   devpi:
-      image: s2.ubuntu.home:5000/docker.io/muccg/devpi:4.5.1
+      image: ${DOCKER_REGISTRY:-}docker.io/muccg/devpi:4.5.1
     volumes:
       - ./data:/data
     ports:

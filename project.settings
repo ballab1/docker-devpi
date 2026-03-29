@@ -1,0 +1,23 @@
+env:
+    PYTHON_VERSION: '3.14.0b3'
+    BASE_TAG: "$PYTHON_VERSION-alpine3.21"
+    CBF_VERSION: 'v3.9.10'
+    CONTAINER_GIT_URL: 'https://nas.home:5001/GIT/devpi'
+    CONTAINER_OS: 'alpine'
+    CONTAINER_NAME: 'python'
+    CONTAINER_TAG=abefed59
+    DOCKER_LOG_DIR: '/var/log'
+    DOCKER_REGISTRY: 'registry.ubuntu.home/'
+    OS_VERSION: '3.21.3'
+    PIP_VERSION: '24.3.1'
+    WORK_DIR: '/data'
+    HOST_IPS: "$(hostname -i)"
+    USER_ID: "$(getent passwd $UID|awk '{split($0, arr, \":\"); print arr[3] \":\" arr[4]}')"
+    FROM_BASE: "${DOCKER_REGISTRY}docker.io/${CONTAINER_NAME:?}:${BASE_TAG}"
+    TARGET: "${DOCKER_REGISTRY}docker.io/muccg/devpi/4.5.1:${CONTAINER_TAG:"?}"
+
+dependencies:
+    BUILD_VERSION:
+      - repo:  'https://github.com/ballab1/jenkins-agent.git'
+        files:
+            - 'containerBuildPod.yaml'

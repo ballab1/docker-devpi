@@ -2,7 +2,7 @@
 set +x
 set -e
 
-: "${CCG_DOCKER_ORG:=s2.ubuntu.home:5000/docker.io/muccg}"
+: "${CCG_DOCKER_ORG:=${DOCKER_REGISTRY:-}docker.io/muccg}"
 : "${CCG_COMPOSER:=ccg-composer}"
 : "${CCG_COMPOSER_VERSION:=latest}"
 : "${CCG_PIP_PROXY=0}"
